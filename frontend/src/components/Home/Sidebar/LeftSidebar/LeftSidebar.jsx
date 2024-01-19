@@ -8,6 +8,10 @@ import Following from "./Following";
 import { Spinner } from "@chakra-ui/react";
 import axios from "axios";
 import { PostContext } from "../../../PostContext";
+import { IoHomeSharp } from "react-icons/io5";
+import { MdChat } from "react-icons/md";
+import { IoMdSettings } from "react-icons/io";
+import { BiSolidBell } from "react-icons/bi";
 
 function LeftSidebar() {
   const { userInfo, logout } = useContext(AuthContext);
@@ -27,44 +31,87 @@ function LeftSidebar() {
   };
   return (
     <>
-      <div className="card">
-        <div className="flex flex-col items-center py-2">
-          {userInfo.photo ? (
-            <div className="w-24 h-24">
+      <div className="bg-white p-2">
+        <div className="flex flex-col items-center">
+          <div
+            className="w-full h-20 relative"
+            style={{
+              backgroundImage: `url("https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?auto=compress&cs=tinysrgb&w=600")`,
+              backgroundSize: "cover",
+            }}
+          >
+            <div className="w-16 h-16 absolute left-1/2 -translate-x-1/2  -bottom-1/2">
               <ImageComponent
-                photo={`${userInfo.photo}`}
+                photo={
+                  "https://images.unsplash.com/photo-1557862921-37829c790f19?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fHww"
+                }
                 borderRadius={"50%"}
               />
             </div>
-          ) : (
-            <div className="w-24 h-24 flex items-center justify-center">
-              <Spinner />
-            </div>
-          )}
+          </div>
 
-          <p className="text-xl py-2 cursor-pointer font-bold">
-            {userInfo.name}
+          <Link to={"/"} className="mt-10 text-xl font-bold">
+            Mohit Kumar
+          </Link>
+          <p className="text-sm">Web Developer at NIIT Ltd</p>
+          <p className="text-sm mx-3 my-2">
+            I'd love to change the world, but they won’t give me the source
+            code.
           </p>
         </div>
-        <hr />
-        <div className="flex justify-center gap-4">
-          <Followers />
-          <Following />
+
+        <div className="flex items-center justify-center gap-3 py-2">
+          <div className="flex flex-col text-center">
+            <span className="text-sm">345</span>
+            <span className="text-sm text-gray-400">Posts</span>
+          </div>
+          <div className="w-[1px] h-8 border-l-2 border-gray-300"></div>
+          <div className="flex flex-col text-center">
+            <span className="text-sm">3454</span>
+            <span className="text-sm text-gray-400">Followers</span>
+          </div>
+          <div className="w-[1px] h-8 border-l-2 border-gray-300"></div>
+          <div className="flex flex-col text-center">
+            <span className="text-sm">345</span>
+            <span className="text-sm text-gray-400">Following</span>
+          </div>
         </div>
 
-        <hr />
+        <hr className="text-gray-400 mx-2" />
 
-        <ul className="flex flex-col">
-          <Link to="/login">
-            <li
-              onClick={() => handleLogout()}
-              className="py-3 pl-3 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-white "
-            >
-              <LogoutIcon />
-              &nbsp;&nbsp;Logout
-            </li>
+        <div className="my-2 pl-3">
+          <Link
+            to="/"
+            className="py-2 inline-block w-full flex items-center gap-2"
+          >
+            <IoHomeSharp size={18} /> Feed
           </Link>
-        </ul>
+          <Link
+            to="#"
+            className="py-2 inline-block w-full flex items-center gap-2"
+          >
+            <MdChat size={18} /> Groups
+          </Link>
+          <Link
+            to="#"
+            className="py-2 inline-block w-full flex items-center gap-2"
+          >
+            <BiSolidBell size={18} /> Notifications
+          </Link>
+          <Link
+            to="/settings"
+            className="py-2 inline-block w-full flex items-center gap-2"
+          >
+            <IoMdSettings size={18} /> Settings
+          </Link>
+          <Link
+            to="/login"
+            className="py-2 inline-block w-full flex items-center gap-2"
+          >
+            <LogoutIcon />
+            Logout
+          </Link>
+        </div>
       </div>
     </>
   );

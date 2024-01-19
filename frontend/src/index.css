@@ -1,7 +1,11 @@
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
 }
 
 body::-webkit-scrollbar {
@@ -11,4 +15,29 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: gray;
   border-radius: 10px;
+}
+
+#story-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+
+#story-scrollbar::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 10px;
+}
+
+#reels-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+#reels-scrollbar::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 10px;
+}
+
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: calc(16+ (24-16) * (100vw-768px) / (1600-768));
+  }
 }

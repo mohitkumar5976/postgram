@@ -79,17 +79,17 @@ function Register() {
 
       <div className=" bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen w-screen justify-center items-center flex lg:h-screen">
         <form
-          className="form-group border border-1 rounded-xl flex flex-col gap-2 p-3 w-3/4 xl:w-1/3 "
+          className="form-group border border-1 rounded-xl flex flex-col gap-2 py-3 px-4 w-full text-[16px] sm:text-[18px] sm:w-96 sm:border"
           onSubmit={handleSubmit}
         >
-          <h3 className="text-center py-2 font-bold text-3xl">PostGram</h3>
+          <h3 className="text-center py-2 font-bold text-[1.8em] text-white">PostGram</h3>
           <input
             type="text"
             name="name"
             value={values.name}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="form-control py-3  "
+            className="form-control py-2  "
             placeholder="Enter name..."
           />
           {errors.name && touched.name ? (
@@ -101,7 +101,7 @@ function Register() {
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="form-control py-3 "
+            className="form-control py-2 "
             placeholder="Enter Email..."
           />
           {errors.email && touched.email ? (
@@ -113,7 +113,7 @@ function Register() {
             onChange={handleChange}
             onBlur={handleBlur}
             name="password"
-            className="form-control py-3 "
+            className="form-control py-2 "
             placeholder="Enter Password..."
           />
           {errors.password && touched.password ? (
@@ -125,7 +125,7 @@ function Register() {
             onChange={handleChange}
             onBlur={handleBlur}
             name="cpassword"
-            className="form-control py-3 "
+            className="form-control py-2 "
             placeholder="Enter Confirm-Password..."
           />
 
@@ -136,7 +136,7 @@ function Register() {
             type="file"
             name="photo"
             onChange={handlePhoto}
-            className="pl-5 form-control py-3 "
+            className="pl-5 form-control py-2 "
           />
           <button className="bg-blue-600 w-100 my-2 py-2 text-white text-[22px] rounded-xl hover:bg-orange-700">
             {state===true ? (
@@ -151,9 +151,9 @@ function Register() {
               <p>Register</p>
             )}
           </button>
-          <p className="text-center">
-            <Link to="/login">Already have an Account?</Link>
-          </p>
+         
+            <Link to="/login" className="text-white text-[1rem] text-center">Already have an Account?</Link>
+         
         </form>
       </div>
     </>

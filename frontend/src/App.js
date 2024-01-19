@@ -1,6 +1,4 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Register from "./components/Auth/Register";
-import Login from "./components/Auth/Login";
 import NewPost from "./components/Post/NewPost";
 import UserProfile from "./components/User/UserProfile";
 import PageNotFound from "./components/PageNotFound";
@@ -9,6 +7,10 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import Home from "./components/Home/Home";
 import HomeWrapper from "./components/Home/HomeWrapper";
 import UserProfileWrapper from "./components/User/UserProfileWrapper";
+import Register from './Auth/Register'
+import Login from './Auth/Login'
+import ReelsPage from "./components/Home/Middle/Reels/ReelsPage";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -31,7 +33,8 @@ function App() {
             }
           >
             <Route index path="/" element={<Home />} />
-
+            <Route exact path="/reels" element={<ReelsPage />} />
+            <Route exact path="/settings" element={<Settings/>} />
             <Route
               path="/user/chats"
               element={
@@ -41,6 +44,7 @@ function App() {
               }
             />
           </Route>
+         
           <Route exact path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

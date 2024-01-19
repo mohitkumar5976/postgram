@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { memo, useContext, useMemo, useState } from "react";
+import React, {  useContext,  useState } from "react";
 import { PostContext } from "../../PostContext";
 import { AuthContext } from "../../AuthContext";
 
@@ -42,12 +42,12 @@ const FollowButton = ({ userId }) => {
   };
 
   return (
-    <div
-      className="border border-1 px-3 py-1 rounded-full cursor-pointer hover:bg-blue-600 hover:text-white"
+    <span
+      className={`border border-1 px-3 py-1 rounded-full cursor-pointer text-[12px] font-bold  hover:bg-blue-600 hover:text-white`}
       onClick={() => handleFollow(userId)}
     >
       {check ? "- Unfollow" : "+ follow"}
-    </div>
+    </span>
   );
 };
 
