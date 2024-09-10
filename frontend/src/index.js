@@ -6,9 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import { PostContextProvider } from "./components/PostContext";
 import { AuthContextProvider } from "./components/AuthContext";
 import { ChakraProvider } from "@chakra-ui/react";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, } from "@mui/material";
+import { theme } from "./theme";
 
-const theme = createTheme();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthContextProvider>

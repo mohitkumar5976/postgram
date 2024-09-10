@@ -16,7 +16,7 @@ export default function NavLinks() {
   return (
     <>
       <div className="flex items-center gap-10 pr-5">
-        <Box className="flex gap-3">
+        {/* <Box className="flex gap-3">
           <Tooltip className="flex items-center" title={"Hello"}>
             <Button>Demo</Button> <IoIosArrowDown size={16} />
           </Tooltip>
@@ -34,7 +34,7 @@ export default function NavLinks() {
           >
             <Button>Account</Button> <IoIosArrowDown size={16} />
           </Tooltip>
-        </Box>
+        </Box> */}
 
         <ul className="flex justify-center items-center gap-2">
           <li>

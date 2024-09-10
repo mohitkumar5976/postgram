@@ -18,7 +18,7 @@ function Search() {
 
   return (
     <>
-      <div className="w-1/2 bg-slate-200 border-2 gap-x-2 rounded-full py-2 px-3 flex justify-center items-center">
+      <div className="bg-slate-200 w-full border-2 gap-x-2 rounded-full py-1.5 px-3 flex justify-center items-center">
         <input
           type="search"
           className="w-full pl-3 bg-inherit focus:outline-none"
